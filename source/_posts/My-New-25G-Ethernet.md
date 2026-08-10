@@ -15,7 +15,7 @@ tags: 灵车日记
 ![](../img/My-New-25G-Ethernet/image-20260601181344210.png)
 
 到手发现固件好老
-
+<!--more-->
 ```shell
 # ethtool -i 
 driver: i40e 
