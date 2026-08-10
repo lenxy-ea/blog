@@ -9,6 +9,7 @@ tags: 日常
 简单记录下手里有一台老旧的Cisco Nexus设备下升级流程，升级需要注意要同时处理`kickstart` + `system` 。
 
 kickstart 提供另一个最小的启动环境。完成与硬件的初始化，（还有点类似bootloader的东西）。kickstart完成后才会引导system image进入。所以这两个程序的版本都需要匹配，如果不匹配会造成启动失败。
+<!--more-->
 
 ```
 启动引导图

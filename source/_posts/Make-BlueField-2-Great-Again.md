@@ -11,6 +11,7 @@ tags: 灵车日记
 今天开机的时候发现机器莫名其妙的慢慢慢慢，于是看了一眼dmesg
 
 发现我那么大的BlueField2 2没起来
+<!--more-->
 
 ```sh
 [    2.818323] mlx5_core 0000:6f:00.0: PTM is not supported by PCIe
