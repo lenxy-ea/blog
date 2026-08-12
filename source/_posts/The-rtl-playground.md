@@ -165,7 +165,7 @@ Physical SPI NOR - 2 MiB
 │ 0x100000 - 0x1BFFFF                 │
 │ reserved size = 768 KiB             │
 ├─────────────────────────────────────┤ 0x1C0000
-│ Reserved                │
+│ Reserved                            │
 │                                     │
 ├─────────────────────────────────────┤ 0x1E0000
 │ CBNF #1 / Control/Boot              |
