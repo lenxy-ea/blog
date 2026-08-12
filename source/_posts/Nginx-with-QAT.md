@@ -4,7 +4,7 @@ date: 2026-04-23 13:28:19
 tags: 折腾日记
 ---
 
-# 我就要把QAT塞到nginx中
+# 把QAT塞到nginx中
 
 最近在研究各家的tls offload方案，于是有了本片文章的契机。恰巧手里有一块intel xeon 8562y+ （es）能让我顺手来测试。（为什么 我的xeon max不能跑QAT!
 

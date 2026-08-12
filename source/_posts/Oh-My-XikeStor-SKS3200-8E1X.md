@@ -1,5 +1,5 @@
 ---
-title: Oh My XikeStor SKS3200-8E1X
+title: 兮克 SKS3200-8E1X 暴毙日记
 date: 2026-05-26 21:03:51
 tags: 灵车日记
 ---
