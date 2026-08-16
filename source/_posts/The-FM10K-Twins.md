@@ -1064,6 +1064,8 @@ Fulcrum 根据不同任务，为每一段配置不同类型的资源。
 
 ##### CAM/RAM Programmable Stages
 
+
+
 例如：
 
 ```
@@ -1072,6 +1074,8 @@ FFU
 L3AR
 L2AR
 ```
+
+
 
 重点资源是：
 
@@ -1211,6 +1215,8 @@ FIELDS.L2TYPE = 0x0800
 STATE.Header = IPv4
 ```
 
+![](../img/The-FM10K-Twins/image-20260816183410256.png)
+
 这些 Metadata 随后继续向 FFU、NextHop 等后续 Stage 传播。Alta 的 Parser 被实现成 fully-pipelined、loop-unrolled parsing state machine，Hot Chips 资料给出的固定最大 parsing depth 为 **128 bytes**。
 
 可以简单画成：
@@ -1231,6 +1237,8 @@ flowchart LR
     FLAGS --> FFU
     STATE --> FFU
 ```
+
+![](../img/The-FM10K-Twins/image-20260816183145034.png)
 
 也就是说：
 
@@ -1255,6 +1263,8 @@ Action Cascade
 ```
 
 并允许前一组 Slice 的结果成为后续 Slice 的 Key。
+
+![](../img/The-FM10K-Twins/image-20260816183454530.png)
 
 所以它可以形成：
 
@@ -1732,6 +1742,8 @@ GloRT → Port
 
 FM6000 的 GloRT Lookup 本身就是 FlexPipe 中一个相当完整的 Stage。
 
+![](../img/The-FM10K-Twins/image-20260816183649130.png)
+
 处理过程大约为：
 
 ```mermaid
@@ -1802,28 +1814,7 @@ DMASK
 
 之后 DMASK 还要经历：
 
-```mermaid
-flowchart TB
-    G["DGLORT"]
-
-    G --> D["Initial DMASK"]
-
-    D --> VLAN["VLAN Membership Filter"]
-
-    VLAN --> STP["Spanning Tree Filter"]
-
-    STP --> LAG["LAG Selection"]
-
-    LAG --> ACL["Egress ACL"]
-
-    ACL --> SEC["Security Policy"]
-
-    SEC --> MIRROR["Mirror / Logging"]
-
-    MIRROR --> CM["Congestion Management"]
-
-    CM --> FINAL["Final DMASK"]
-```
+![](../img/The-FM10K-Twins/image-20260816183744150.png)
 
 FM6000 Datasheet 明确列出了这一过程：Initial GloRT mapping 之后，还会依次受到 VLAN Membership、STP、LAG、Security Policy、CPU Trap、Mirroring 以及 Congestion Management 等条件影响。
 
@@ -1895,6 +1886,8 @@ LAG Filtering
 ```
 
 最终从这个逻辑 Group 中选择一个 Physical Member。FM6000 的 GloRT Lookup 甚至允许不同 GloRT Entry 选择不同 Hash Rotation 来完成这一过程。
+
+![](../img/The-FM10K-Twins/image-20260816183816619.png)
 
 因此：
 
@@ -2126,6 +2119,8 @@ VID      12 bit
 ```
 
 其中 `USER` 字段用于 PCIe / Tunnel Engine 形式的 FTAG，在 Ethernet Switch-to-Switch FTAG 中不可用。
+
+![](../img/The-FM10K-Twins/image-20260816183025017.png)
 
 从功能上看可以整理成：
 
@@ -2705,3 +2700,5 @@ FTAG
 它更像是一颗：
 
 **拥有 PCIe Endpoint 的分布式 Ethernet Switch Fabric。**
+
+![](../img/The-FM10K-Twins/image-20260816182722826.png)
