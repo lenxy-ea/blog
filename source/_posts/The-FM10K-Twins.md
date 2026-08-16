@@ -35,7 +35,7 @@ mermaid: true
 
 最简单的流水线可以抽象成：
 
-```
+```mermaid
 flowchart LR
     A["Register A"] --> L1["Logic"]
     L1 --> B["Register B"]
@@ -403,7 +403,7 @@ FM5000/FM6000 的 Ingress / Egress Crossbar 最多支持 **76 个 full-duplex lo
 
 可以简化理解为：
 
-```
+```mermaid
 flowchart LR
     P0["Port 0"] --> X["Ingress Crossbar"]
     P1["Port 1"] --> X
