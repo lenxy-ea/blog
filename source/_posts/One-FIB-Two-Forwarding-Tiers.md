@@ -38,7 +38,7 @@ ASIC /0  → VPP Software Forwarding
 
 换句话说，我们真正需要维护的也许从来都不是：
 
-**两张 FIB。**而是：**One FIB, Two Forwarding Tiers.**
+**两张 FIB**  而是：**One FIB, Two Forwarding Tiers.**
 
 一份权威的 Forwarding State，两种不同性能等级的数据路径。
 
