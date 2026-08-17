@@ -4,7 +4,7 @@ date: 2026-08-17 18:13:10
 tags: FM10K烹饪指南
 ---
 
-# 从快慢表到分层转发：ASIC + VPP 混合数据面的设计
+# 从快慢表到分层转发:  ASIC + VPP 混合数据面的设计
 
 > 这一篇是 [FM10K烹饪指南——把你的UIO挪到PCIE侧](https://blog.lenxy.net/FM10K-Fix-Your-UIO.html)的后续文章，因为可以挪到PCIE侧我才开始考虑的是否能把它打造成一款真正的路由器。而不是一个CRS。关于代码部分会在 [Netlab-OS](https://github.com/netlab-switch/netlab-os)的仓库里。
 
@@ -44,7 +44,7 @@ ASIC /0  → VPP Software Forwarding
 
 要理解为什么这种设计成立，我们首先需要回到几十年前，看看传统的 Fast Path 与 Slow Path 为什么会出现，以及 Cisco CEF 是如何改变路由器 Forwarding Architecture 的。
 
-## 为什么传统快路径 / 慢路径存在：从 Process Switching 到 CEF
+## 为什么传统快路径 / 慢路径存在: 从 Process Switching 到 CEF
 
 如今当我们谈到路由器的数据平面，我们会提到以下几个概念
 
@@ -73,7 +73,7 @@ Hardware Forwarding
 
 今天我们所说的 ASIC FIB、硬件 Offload，甚至本文后面要讨论的 **ASIC + VPP 分层转发**，本质上都可以从这条技术路线继续推导出来。
 
-### Process Switching：最原始的方式
+### Process Switching: 最原始的方式
 
 这也就是最直观的路由处理方式，把每一个 Packet，都做一次完整的处理。
 
